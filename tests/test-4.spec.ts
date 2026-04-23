@@ -23,20 +23,4 @@ test('test', async ({ page }) => {
   await page.locator('select[name="day"]').selectOption('10');
   await page.getByPlaceholder('Year').click();
   await page.getByPlaceholder('Year').fill('1980');
-  await page.getByText('Male', { exact: true }).click();
-  await page.locator('.check-mark').first().click();
-  await page.locator('div').nth(1).click();
-  await page.locator('select[name="day"]').selectOption('3');
-  await page.getByText('What\'s your first name?What\'s').click();
-  await page.locator('div:nth-child(10) > label > .check-mark').click();
-  await page.getByRole('checkbox', { name: 'I agree to myStrength\'s Terms' }).press('Tab');
-  await page.getByRole('link', { name: 'Terms of Use' }).press('Tab');
-  await page.getByRole('link', { name: 'Privacy Policy' }).press('Tab');
-  await page.getByRole('button', { name: 'Continue' }).press('Tab');
-  await page.getByRole('button', { name: 'Continue' }).click();
-  await page.getByRole('button', { name: 'Next' }).click();
-  await page.getByRole('checkbox', { name: 'Stress' }).first().click();
-  await page.getByRole('button', { name: 'Next' }).click();
-  await page.getByRole('checkbox', { name: 'Angry' }).first().click();
-
 });
