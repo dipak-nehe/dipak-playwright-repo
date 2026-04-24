@@ -49,5 +49,15 @@ expect(json).toEqual(expect.objectContaining({
     title: '[Bug] report 1',
     body: 'Bug description'
   }));
+
 });
 
+test('should create a feature request', async ({ request }) => {
+  const newIssue = await request.post(`/repos/${USER}/${REPO}/issues`, {
+    data: {
+      title: '[Feature] request 1',
+      body: 'Feature description',
+    }
+  });
+  expect(newIssue.ok()).toBeTruthy();
+});
