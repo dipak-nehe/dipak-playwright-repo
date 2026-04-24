@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Google.com - Comprehensive Test Suite', () => {
+test.describe('Google.com - Comprehensive Test Suite', , {
+  tag: '@report',
+},() => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://www.google.com');
     await page.waitForLoadState('networkidle');
