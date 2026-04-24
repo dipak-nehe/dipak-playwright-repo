@@ -7,7 +7,8 @@ test.describe('Google.com - Comprehensive Test Suite', () => {
   });
 
   test.describe('Successful Scenarios', () => {
-    test('should load Google homepage successfully', async ({ page }) => {
+    test('should load Google homepage successfully', {
+  tag: '@fast',}, async ({ page }) => {
       // Take screenshot of initial load
       await page.screenshot({ path: 'screenshots/01-google-homepage-load.png' });
       
@@ -19,7 +20,7 @@ test.describe('Google.com - Comprehensive Test Suite', () => {
       await expect(searchBox).toBeVisible();
     });
 
-    test('should display Google logo', async ({ page }) => {
+    test('should display Google logo @slow', async ({ page }) => {
       // Look for Google logo
       const logo = page.locator('img[alt="Google"]').first();
       await expect(logo).toBeVisible();
