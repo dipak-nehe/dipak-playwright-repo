@@ -10,7 +10,7 @@ test.describe('Google.com - Comprehensive Test Suite',  {
 
   test.describe('Successful Scenarios', () => {
     test('should load Google homepage successfully', {
-  tag: '@fast',}, async ({ page }) => {
+  tag: ['@fast','@slow'],}, async ({ page }) => {
       // Take screenshot of initial load
       await page.screenshot({ path: 'screenshots/01-google-homepage-load.png' });
       

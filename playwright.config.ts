@@ -44,6 +44,15 @@ export default defineConfig({
       use: { ...devices['Desktop Firefox'] },
     },
 
+   {
+      name: 'Mobile Safari',
+      use: {...devices['iPhone 13'] },
+  },
+   {
+      name: 'Mobile Safari',
+      use: {...devices['Galaxy Note 3'] },
+  },
+
    /* {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
