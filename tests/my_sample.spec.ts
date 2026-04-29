@@ -46,7 +46,16 @@ test('test playwwirght devlopment website for checks', async ({page}) => {
       await expect(page).toHaveTitle('Fast and reliable end-to-end testing for modern web apps | Playwright');
 
     });
-  test.afterEach(async ({page,browser }) => {
+
+    test('test website url for playwirght devlopment website', async ({page}) => {
+      await page.goto('https://playwright.dev/');
+      await page.getByRole('link', { name: 'Get started' }).click();
+      await expect(page).toHaveURL('https://playwright.dev/docs/intro');
+      await expect(page.locator('h1')).toContainText('Installation');
+  
+    });
+  
+    test.afterEach(async ({page,browser }) => {
     await page.close();
     await browser.close();
   });
